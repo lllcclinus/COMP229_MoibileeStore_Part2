@@ -11,7 +11,7 @@ rel="stylesheet">
 
 </head>
 <body>
-<div id="root">{"message":"Welcome to MoibileeStore application."}</div> 
+<div id="root">Hello World</div> 
 <script type="text/javascript" src="/dist/bundle.js"></script>
 </body>
 </html>` 
