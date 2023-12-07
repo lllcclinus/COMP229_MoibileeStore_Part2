@@ -47,6 +47,15 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  listheading:{
+    backgroundColor: '#ED7D31'
+  },
+  listItemOdd: {
+    backgroundColor: 'white', // or any color you prefer
+  },
+  listItemEven: {
+    backgroundColor: '#FCE4D6', // or any color you prefer
+  },
   nameColumn: {
     width: '20%', // 
   },
@@ -273,7 +282,7 @@ export default function Products() {
         Cart
       </Typography>
       <List dense>
-      <ListItem className={classes.listItem}>
+      <ListItem className={`${classes.listItem} ${classes.listheading}`}>
         <ListItemText primary="Name" className={classes.nameColumn} />
         <ListItemText primary="Description" className={classes.descriptionColumn} />
         <ListItemText primary="Price" className={classes.priceColumn} />
@@ -283,7 +292,7 @@ export default function Products() {
         </ListItemSecondaryAction>
       </ListItem>
         {products.map((item, i) => (
-          <ListItem key={i} button className={classes.listItem}>
+          <ListItem key={i} button className={`${classes.listItem} ${i % 2 === 0 ? classes.listItemEven : classes.listItemOdd}`}>
             <ListItemText primary={item.name} className={classes.nameColumn} />
             <ListItemText primary={item.description} className={classes.descriptionColumn} />
             <ListItemText primary={item.price} className={classes.priceColumn} />

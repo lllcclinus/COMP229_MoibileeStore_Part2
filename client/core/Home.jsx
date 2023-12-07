@@ -29,6 +29,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import unicornbikeImg from './../assets/images/unicornbikeImg.jpg';
+import logo from './../assets/images/Logo.jpeg'
 import { Link } from 'react-router-dom';
    
 
@@ -40,10 +41,11 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     padding: theme.spacing(3, 2.5, 2),
-    color: theme.palette.openTitle,
+    color: 'white',
+    backgroundColor: '#5B9BD5',
   },
   media: {
-    minHeight: 400,
+    minHeight: 470,
   },
 }));
 
@@ -56,10 +58,10 @@ return (
 
 
 <CardMedia className={classes.media}
-image={unicornbikeImg} title="Unicorn Bicycle"/>
-<CardContent>
-<Typography variant="body2" component="p"> 
-Welcome to the MERN Skeleton home page.
+image={logo} title="MOIBILEE STORE" />
+<CardContent style={{backgroundColor: '#D6DF59'}}>
+<Typography variant="body2" component="p" > 
+Welcome to the MOIBILEE STORE home page.
 </Typography> 
 </CardContent>
 </Card> 

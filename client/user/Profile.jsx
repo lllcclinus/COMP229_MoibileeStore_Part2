@@ -22,6 +22,9 @@ import { useParams } from 'react-router-dom';
 
 
 const useStyles = makeStyles(theme => ({
+  ground:{
+    backgroundColor: '#DDEBF7',
+  },
   root: theme.mixins.gutters({
     maxWidth: 600,
     margin: 'auto',
@@ -73,7 +76,7 @@ export default function Profile({ match }) {
     console.log(user._id)
     }
     return (
-      <Paper className={classes.root} elevation={4}>
+      <Paper className={`${classes.root} ${classes.ground}`} elevation={4}>
         <Typography variant="h6" className={classes.title}>
           Profile
         </Typography>

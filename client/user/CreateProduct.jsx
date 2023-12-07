@@ -9,6 +9,9 @@ import { create } from './api-product';
 import auth from '../lib/auth-helper.js'
 
 const useStyles = makeStyles(theme => ({
+  ground:{
+    backgroundColor: '#E2EFDA',
+  },
   card: {
     maxWidth: 400,
     margin: '0 auto',
@@ -80,7 +83,7 @@ export default function CreateProduct() {
 
   return (
     <div>
-      <Card className={classes.card}> 
+      <Card className={`${classes.card} ${classes.ground}`}> 
         <CardContent>
           <Typography variant="h6" className={classes.title}> 
             New Product

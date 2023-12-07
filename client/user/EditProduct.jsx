@@ -29,6 +29,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(3),
     padding: theme.spacing(2),
     textAlign: 'center',
+    backgroundColor: '#E2EFDA',
   },
   textField: {
     width: '100%',

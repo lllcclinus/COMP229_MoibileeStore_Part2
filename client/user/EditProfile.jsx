@@ -18,7 +18,8 @@ const useStyles = makeStyles(theme => ({
     margin: 'auto',
     textAlign: 'center',
     marginTop: theme.spacing(5),
-    paddingBottom: theme.spacing(2)
+    paddingBottom: theme.spacing(2),
+    backgroundColor: '#DDEBF7',
   },
   title: {
     margin: theme.spacing(2),

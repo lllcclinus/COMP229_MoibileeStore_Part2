@@ -7,6 +7,7 @@ import HomeIcon from '@material-ui/icons/Home'
 import Button from '@material-ui/core/Button'
 import auth from '../lib/auth-helper'
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import backgroundimg from './../assets/images/backgound.png';
 
 
 const isActive = (location, path) => {
@@ -17,10 +18,11 @@ export default function Menu(){
   const location = useLocation();
 
   return (
-  <AppBar position="static">
+    //<AppBar position="static" style={{ backgroundColor: '#3F3F40',color: '#D6DF59' }}>
+    <AppBar position="static" style={{ backgroundImage: `url(${backgroundimg})`, color: '#D6DF59' }}>
     <Toolbar>
       <Typography variant="h6" color="inherit">
-        MERN Skeleton
+        MOIBILEE STORE
       </Typography>
       <Link to="/">
         <IconButton aria-label="Home" style={isActive(location, "/")}>

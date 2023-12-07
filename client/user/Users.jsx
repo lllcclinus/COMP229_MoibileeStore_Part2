@@ -36,7 +36,13 @@ const handleCheck = (event, id) => {
 
 
 const useStyles = makeStyles(theme => ({
-    card: {
+  listItemOdd: {
+    backgroundColor: 'white', // or any color you prefer
+  },
+  listItemEven: {
+    backgroundColor: '#DDEBF7', // or any color you prefer
+  },
+  card: {
       // Define your card styles here
     },
     textField: {
@@ -88,9 +94,9 @@ All Users
 </Typography> 
 <List dense>
 {users.map((item, i) => {
-    return  <Link component={RouterLink} to={"/user/" + item._id} key={i}>
+    return  <Link component={RouterLink} to={"/user/" + item._id} key={i} >
     
-<ListItem button> 
+<ListItem button className={`${i % 2 === 0 ? classes.listItemEven : classes.listItemOdd}`}> 
 <ListItemAvatar>
 
 <Avatar> 

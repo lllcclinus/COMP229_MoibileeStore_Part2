@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { useState } from 'react'
 
@@ -139,13 +140,29 @@ const handleCheck = (event, item) => {
 
 
 const useStyles = makeStyles(theme => ({
-  
+  Checkbox: {
+    borderRadius: 0,
+    alignItems: 'center',
+    width: '10px',
+    height: '36px',
+    paddingTop: 0,
+    paddingBottom: 0,
+  },
   listItem: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     width: '97%',
+  },
+  listheading:{
+    backgroundColor: '#70AD47'
+  },
+  listItemOdd: {
+    backgroundColor: 'white', // or any color you prefer
+  },
+  listItemEven: {
+    backgroundColor: '#E2EFDA', // or any color you prefer
   },
   Link: {
     display: 'flex', 
@@ -368,7 +385,7 @@ export default function Products() {
       </Typography>
       <List dense>
       {/* Header */}
-      <ListItem className={classes.listItem}>
+      <ListItem className={`${classes.listItem} ${classes.listheading}`}>
         <ListItemText primary="Name" className={classes.nameColumn} />
         <ListItemText primary="Description" className={classes.descriptionColumn} />
         <ListItemText primary="Price" className={classes.priceColumn} />
@@ -378,7 +395,10 @@ export default function Products() {
         </ListItemSecondaryAction>
       </ListItem>
       {products.map((item, i) => (
-        <ListItem button className={classes.listItem}>
+        <ListItem 
+        button 
+        className={`${classes.listItem} ${i % 2 === 0 ? classes.listItemEven : classes.listItemOdd}`}
+        >
         <Link component={RouterLink} to={"/product/" + item._id} className={classes.Link}  key={i}>
           
             <ListItemText primary={item.name} className={classes.nameColumn} />
@@ -394,9 +414,10 @@ export default function Products() {
         </Link>
         <ListItemSecondaryAction>
         {auth.isAuthenticated() && (
-                <Checkbox
+                <Checkbox 
                   onChange={(event) => handleCheck(event, item)}
                   onClick={(event) => event.stopPropagation()}
+                  className={`${classes.Checkbox} ${i % 2 === 0 ? classes.listItemEven : classes.listItemOdd}`}
                 />
               )}
         </ListItemSecondaryAction>
@@ -422,3 +443,4 @@ export default function Products() {
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
+
